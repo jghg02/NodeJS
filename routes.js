@@ -1,7 +1,6 @@
 //Important to print [Object object]
 var util = require("util")
-
-
+var data = require('./index')
 
 module.exports = function(app){
     //modelo
@@ -39,10 +38,10 @@ module.exports = function(app){
     //Post
     addItem = function(req,res) {
         //console.log('POST ' + util.inspect(req))
-        console.log('JOSUE ' + util.inspect(req.body))
+        console.log('data ' + util.inspect(req.body))
         
         var x = new item({
-             itemId: '1',//req.body.itemId,
+             itemId: '2',
              name: 'MLC',//req.body.name,
              country: 'Chile'//req.body.country
          })

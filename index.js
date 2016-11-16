@@ -2,6 +2,15 @@
 var express = require('express')
 var mongo = require('mongoose')
 var bodyParser = require('body-parser');
+var util = require("util")
+
+//config express
+var app = express()
+
+require('./routes')(app)
+
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 //Connect to mongo 
 mongo.connect('mongodb://localhost/josue', function(err,res){
@@ -12,17 +21,14 @@ mongo.connect('mongodb://localhost/josue', function(err,res){
     }
 })
 
-//config express
-var app = express()
-
-app.use(bodyParser.json()); // support json encoded bodies
-app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
-
-app.get('/', function(req, res) {
+app.post('/:id', function(req, res) {
+    console.log('req.body ' + util.inspect(req.body))
+    console.log('param ' + util.inspect(req.params)) //get params
+    console.log('this is the iD ' + req.params.id)
     res.send('Hello.....!!!!!');
 });
 
-require('./routes')(app)
+
 
 //port to listen server 
 app.listen(3000, function() {
