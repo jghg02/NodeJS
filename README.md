@@ -65,5 +65,7 @@ Para poder usar estas _dependencias_ en el proyecto es necesario hacer un import
 	
 
 
+**Importante a la hora de enviar datos al backend** 
+
 
 
