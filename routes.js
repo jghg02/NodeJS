@@ -37,13 +37,11 @@ module.exports = function(app){
 
     //Post
     addItem = function(req,res) {
-        //console.log('POST ' + util.inspect(req))
-        console.log('data ' + util.inspect(req.body))
-        
+        console.log('Saving Data....')
         var x = new item({
-             itemId: '2',
-             name: 'MLC',//req.body.name,
-             country: 'Chile'//req.body.country
+             itemId: req.body.itemId,
+             name: req.body.name,
+             country: req.body.country
          })
         
         x.save()

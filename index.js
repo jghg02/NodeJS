@@ -7,10 +7,10 @@ var util = require("util")
 //config express
 var app = express()
 
-require('./routes')(app)
-
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
+require('./routes')(app)
 
 //Connect to mongo 
 mongo.connect('mongodb://localhost/josue', function(err,res){
