@@ -1,4 +1,5 @@
 ## NodeJS
+
 Para crear un proyecto en **NodeJS** lo primero que se debe hacer es ejecutar el siguiente comando.
 
 	> npm init (este comando te preguta la información básica del proyecto como nombre, etc, etc)
