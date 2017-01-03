@@ -2,7 +2,6 @@
 var util = require("util")
 var data = require('./index')
 
-
 module.exports = function(app){
     //modelo
     var item = require('./mongo')
