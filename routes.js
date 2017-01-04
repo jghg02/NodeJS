@@ -1,4 +1,5 @@
 //Important to print [Object object]
+
 var util = require("util")
 var data = require('./index')
 
